@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Umiiii/raydium-go/types"
+	"github.com/FFYzz/raydium-go/types"
 	"github.com/near/borsh-go"
 )
 

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/binary"
 
-	"github.com/Umiiii/raydium-go/types"
+	"github.com/FFYzz/raydium-go/types"
 )
 
 // DecodeRaydiumData is a generic function that can decode any struct that follows

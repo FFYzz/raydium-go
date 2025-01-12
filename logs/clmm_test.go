@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Umiiii/raydium-go/types"
+	"github.com/FFYzz/raydium-go/types"
 	"github.com/gagliardetto/solana-go"
 )
 

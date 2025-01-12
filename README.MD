@@ -4,7 +4,7 @@ Raydium-Go is a Go library for parsing the Raydium DEX events.
 
 ## Installation
 
-go get github.com/Umiiii/raydium-go
+go get github.com/FFYzz/raydium-go
 
 ## Supported Protocols
 
@@ -21,7 +21,7 @@ go get github.com/Umiiii/raydium-go
 ### Parse Log Messages
 ```go
 import (
-    "github.com/Umiiii/raydium-go/logs"
+    "github.com/FFYzz/raydium-go/logs"
 )
 
 ...
@@ -37,7 +37,7 @@ import (
 ### Parse Instruction Data
 ```go
 import (
-    "github.com/Umiiii/raydium-go/instructions"
+    "github.com/FFYzz/raydium-go/instructions"
 )
 ...
 instructions.DecodeRaydiumCreatePoolData(outerInst.Data)
@@ -47,7 +47,7 @@ instructions.DecodeRaydiumCreatePoolData(outerInst.Data)
 
 ```go
 import (
-    "github.com/Umiiii/raydium-go/parameters"
+    "github.com/FFYzz/raydium-go/parameters"
 )
 ...
 parameters.DecodeRaydiumCreatePoolParams(outerInst.Data)
@@ -57,8 +57,8 @@ parameters.DecodeRaydiumCreatePoolParams(outerInst.Data)
 ### Mapping Account Address
 ``` go
 import (
-    "github.com/Umiiii/raydium-go/accounts"
-    "github.com/Umiiii/raydium-go/types"    
+    "github.com/FFYzz/raydium-go/accounts"
+    "github.com/FFYzz/raydium-go/types"    
 )
 
 ....
@@ -76,7 +76,7 @@ Actually you can infer the swap details from the log message ONLY, but it is qui
 So a log function is provided to group the log message first.
 ```go
 import (
-    "github.com/Umiiii/raydium-go/logs"
+    "github.com/FFYzz/raydium-go/logs"
 )
 
 func main() {

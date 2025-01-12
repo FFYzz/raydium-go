@@ -40,7 +40,6 @@ func GetRaydiumCLMMLogsFromBase64Log(logData string) (interface{}, error) {
 	// Match discriminator and deserialize accordingly
 	var result interface{}
 	switch discriminator {
-
 	case types.ClmmConfigChangeEventDiscriminator:
 		event := new(types.ClmmConfigChangeEvent)
 		err = borsh.Deserialize(event, remainingData)
@@ -88,5 +87,30 @@ func GetRaydiumCLMMLogsFromBase64Log(logData string) (interface{}, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to decode borsh data: %w", err)
 	}
-	return result, nil
+
+	// Return the result directly, but specify the type
+	switch r := result.(type) {
+	case *types.ClmmConfigChangeEvent:
+		return r, nil
+	case *types.ClmmCollectPersonalFeeEvent:
+		return r, nil
+	case *types.ClmmCollectProtocolFeeEvent:
+		return r, nil
+	case *types.ClmmCreatePersonalPositionEvent:
+		return r, nil
+	case *types.ClmmDecreaseLiquidityEvent:
+		return r, nil
+	case *types.ClmmIncreaseLiquidityEvent:
+		return r, nil
+	case *types.ClmmLiquidityCalculateEvent:
+		return r, nil
+	case *types.ClmmLiquidityChangeEvent:
+		return r, nil
+	case *types.ClmmSwapEvent:
+		return r, nil
+	case *types.ClmmPoolCreatedEvent:
+		return r, nil
+	default:
+		return nil, fmt.Errorf("unknown event type: %T", r)
+	}
 }

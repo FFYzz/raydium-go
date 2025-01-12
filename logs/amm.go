@@ -73,5 +73,19 @@ func GetRaydiumAmmLogsFromRayLog(rayLog string) (interface{}, error) {
 		return nil, fmt.Errorf("failed to decode borsh data: %w", err)
 	}
 
-	return result, nil
+	// Return the result directly, but specify the type
+	switch r := result.(type) {
+	case *types.RaydiumAmmInitLog:
+		return r, nil
+	case *types.RaydiumAmmDepositLog:
+		return r, nil
+	case *types.RaydiumAmmWithdrawLog:
+		return r, nil
+	case *types.RaydiumAmmSwapBaseInLog:
+		return r, nil
+	case *types.RaydiumAmmSwapBaseOutLog:
+		return r, nil
+	default:
+		return nil, fmt.Errorf("unknown log type: %T", r)
+	}
 }
